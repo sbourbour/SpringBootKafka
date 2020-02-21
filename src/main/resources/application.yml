@@ -1,0 +1,17 @@
+spring:
+   application:
+      name: kafkaspring
+   
+server:
+   port: 8096
+   servlet.contextPath: /kafkaspring
+
+
+---
+spring:
+   profiles: local
+
+elasticsearch:
+   clustername: shahriar-cluster
+   host: localhost
+   port: 9200
