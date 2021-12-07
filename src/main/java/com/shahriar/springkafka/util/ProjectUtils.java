@@ -39,4 +39,11 @@ public class ProjectUtils {
                 .get("id_str")
                 .getAsString();
     }
+    
+    public static Integer extractUserFollowersInTweet(String tweetJson) {        
+        return JsonParser.parseString(tweetJson)
+                .getAsJsonObject()
+                .get("followers_count")
+                .getAsInt();
+    }
 }
