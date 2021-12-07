@@ -7,6 +7,8 @@ import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import com.shahriar.springkafka.util.ProjectUtils;
@@ -14,7 +16,7 @@ import com.shahriar.springkafka.util.ProjectUtils;
 @Component
 public class StreamsFilterTweets {
 		
-	// @EventListener(ApplicationReadyEvent.class)
+	@EventListener(ApplicationReadyEvent.class)
 	public void filterTweets() {
 		Properties properties = new Properties();
         properties.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
